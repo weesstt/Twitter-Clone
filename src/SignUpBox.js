@@ -30,12 +30,9 @@ const SignUpBox = () => {
                 <input className='signup__form__input' placeholder='Create your name' id="displayNameField"/>
                 <input className='signup__form__input' placeholder='Enter your email' id="emailField"/>
                 <input className='signup__form__input' placeholder='Create your username' id="usernameField"/>
-                <input className='signup__form__input' placeholder='Create your password' type='password' id="passwordField"/>
+                <input className='signup__form__input' placeholder='Create your password' type='password' id="passwordField" onKeyDown={(event) => signUp(event, setErrorMsg)}/>
                 <div className='signup__errormsg'>{(errorMsg !== null && errorMsg.description)}</div>
-                <button className='signup__form__button' onClick={() => signUp(document.getElementById("displayNameField").value, 
-                                                                                document.getElementById("emailField").value, 
-                                                                                document.getElementById("usernameField").value,
-                                                                                document.getElementById("passwordField").value, setErrorMsg)}>Sign Up</button> 
+                <button className='signup__form__button' onClick={(event) => signUp(event, setErrorMsg)}>Sign Up</button> 
                 <div className='signup__signin__divider'></div>
                 <button className='signup__form__button' type='Submit' onClick={() => {setErrorMsg(InvalidForms.None); setSignIn(true);}}>Log In</button>
             </div>}
@@ -43,10 +40,9 @@ const SignUpBox = () => {
             {signIn && 
             <div className='signup__form'>
                 <input className='signup__form__input' placeholder='Enter your email' id="emailField"/> 
-                <input className='signup__form__input' placeholder='Enter your password' type="password" id="passwordField"/>
+                <input className='signup__form__input' placeholder='Enter your password' type="password" id="passwordField" onKeyDown={(event) => firebaseSignIn(event, setErrorMsg)}/>
                 <div className='signup__errormsg'>{errorMsg !== null && errorMsg.description}</div>
-                <button className='signup__form__button' type='Submit' onClick={() => {firebaseSignIn(document.getElementById("emailField").value,
-                                                                                document.getElementById("passwordField").value, setErrorMsg)}}>Log In</button>
+                <button className='signup__form__button' type='Submit' onClick={(event) => {firebaseSignIn(event, setErrorMsg)}}>Log In</button>
                 <div className='signup__signin__divider'></div>
                 <button className='signup__form__button' type='Submit' onClick={() => {setErrorMsg(InvalidForms.None); setSignIn(false);}}>Sign Up</button>
             </div>}
@@ -54,7 +50,14 @@ const SignUpBox = () => {
     )
 }
 
-async function signUp(displayName, email, username, password, setError){
+async function signUp(event, setError){
+    if(event !== null && event.type === "keydown" && event.key !== "Enter") return;
+
+    const displayName = document.getElementById("displayNameField").value;
+    const email = document.getElementById("emailField").value;
+    const username = document.getElementById("usernameField").value;
+    const password = document.getElementById("passwordField").value;
+
     if(!validateDisplayName(displayName)) return handleInvalidInput(InvalidForms.DisplayName, setError);
     if(!validateEmail(email)) return handleInvalidInput(InvalidForms.Email, setError);
     if(!validateUsername(username)) return handleInvalidInput(InvalidForms.Username, setError);
@@ -105,7 +108,12 @@ async function signUp(displayName, email, username, password, setError){
     )
 }
 
-function firebaseSignIn(email, password, setErrorMsg){
+function firebaseSignIn(event, setErrorMsg){
+    if(event !== null && event.type === "keydown" && event.key !== "Enter") return;
+
+    const email = document.getElementById("emailField").value;
+    const password = document.getElementById("passwordField").value;
+
     if(!validateEmail(email)) return;
     if(!validatePassword(password)) return;
 
