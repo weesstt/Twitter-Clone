@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/twitter-clone/static/css/main.424f8b63.css",
-    "main.js": "/twitter-clone/static/js/main.e86da95b.js",
-    "static/js/787.e8607b80.chunk.js": "/twitter-clone/static/js/787.e8607b80.chunk.js",
-    "index.html": "/twitter-clone/index.html",
-    "main.424f8b63.css.map": "/twitter-clone/static/css/main.424f8b63.css.map",
-    "main.e86da95b.js.map": "/twitter-clone/static/js/main.e86da95b.js.map",
-    "787.e8607b80.chunk.js.map": "/twitter-clone/static/js/787.e8607b80.chunk.js.map"
+    "main.css": "/Twitter-Clone/static/css/main.424f8b63.css",
+    "main.js": "/Twitter-Clone/static/js/main.f326074b.js",
+    "static/js/787.e8607b80.chunk.js": "/Twitter-Clone/static/js/787.e8607b80.chunk.js",
+    "index.html": "/Twitter-Clone/index.html",
+    "main.424f8b63.css.map": "/Twitter-Clone/static/css/main.424f8b63.css.map",
+    "main.f326074b.js.map": "/Twitter-Clone/static/js/main.f326074b.js.map",
+    "787.e8607b80.chunk.js.map": "/Twitter-Clone/static/js/787.e8607b80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.424f8b63.css",
-    "static/js/main.e86da95b.js"
+    "static/js/main.f326074b.js"
   ]
 }
