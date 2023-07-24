@@ -1,0 +1,75 @@
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--twitter-color);
+    margin-top: 25px;
+    font-size: 50px;
+}
+
+.signup__box{
+    border: 3px solid var(--twitter-background);
+    min-height: 500px;
+    min-width: 400px;
+    border-radius: 20px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    background-color: var(--twitter-color);
+}
+
+.signup__form {
+    border: none;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.signup__form__input {
+    border: 1px solid var(--twitter-background);
+    min-width: 250px;
+    min-height: 50px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.signup__form__button {
+    border: none;
+    border-radius: 20px;
+    color: var(--twitter-color);
+    font-weight: 20px;
+    background-color: white;
+    font-size: 20px;
+    min-height: 54px;
+    min-width: 273px;
+    padding: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.twitter__icon {
+    font-size: 100px !important;
+}
+
+.signup__signin__divider {
+    min-width: 50px;
+    min-height: 2px;
+    margin-bottom: 10px;
+    background-color: var(--twitter-background);
+}
+
+.signup__errormsg {
+    color: rgb(217, 0, 0);
+    font-size: 12pt;
+    font-weight: normal;
+    word-wrap: normal;
+    max-width: 250px;
+}
